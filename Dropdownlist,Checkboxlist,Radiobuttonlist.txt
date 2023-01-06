@@ -1,0 +1,80 @@
+using System;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+public partial class _Default : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Label1.Text = DropDownList1.SelectedValue.ToString();
+        Label2.Text = "Selected Item(s):<br /><br />";
+        for (int i = 0; i < CheckBoxList1.Items.Count; i++)
+        {
+            if (CheckBoxList1.Items[i].Selected)
+            {
+                Label2.Text += CheckBoxList1.Items[i].Text + "<br />";
+            }
+        }
+
+        Label3.Text = "Selected Item(s):<br /><br />";
+        for (int i = 0; i < RadioButtonList1.Items.Count; i++)
+        {
+            if (RadioButtonList1.Items[i].Selected)
+            {
+                Label3.Text += RadioButtonList1.Items[i].Text + "<br />";
+            }
+        }
+    }
+}
+
+Source Code:
+<%@ Page Title="Home Page" Language="C#"  AutoEventWireup="true"
+    CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+
+<form id="form1" runat="server">
+<asp:Label ID="Label1" runat="server" Text="Select Color"></asp:Label>
+<br />
+<asp:DropDownList ID="DropDownList1" runat="server">
+    <asp:ListItem>Red</asp:ListItem>
+    <asp:ListItem>Green</asp:ListItem>
+    <asp:ListItem>Blue</asp:ListItem>
+</asp:DropDownList>
+<br />
+<br />
+<asp:Label ID="Label2" runat="server" Text="Select Color"></asp:Label>
+<asp:CheckBoxList ID="CheckBoxList1" runat="server">
+    <asp:ListItem>Red</asp:ListItem>
+    <asp:ListItem>Green</asp:ListItem>
+    <asp:ListItem>Blue</asp:ListItem>
+</asp:CheckBoxList>
+<br />
+<asp:Label ID="Label3" runat="server" Text="Selected Item(s):"></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label4" runat="server" Text="Select Color"></asp:Label>
+<br />
+<br />
+<asp:RadioButtonList ID="RadioButtonList1" runat="server">
+    <asp:ListItem>Red</asp:ListItem>
+    <asp:ListItem>Green</asp:ListItem>
+    <asp:ListItem>Blue</asp:ListItem>
+</asp:RadioButtonList>
+<br />
+<asp:Label ID="Label5" runat="server" Text="Selected Item(s):"></asp:Label>
+<br />
+<br />
+<asp:Button ID="Button1" runat="server" Text="Button" />
+<br />
+</form>
+

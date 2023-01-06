@@ -1,0 +1,33 @@
+<form id="form1" runat="server">
+<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+&nbsp;
+<%@ Page Theme="Theme1" Language="C#" AutoEventWireup="true"
+CodeFile="Default.aspx.cs" Inherits="_Default" %>
+
+
+<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+<br />
+<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+&nbsp;&nbsp;
+<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+<br />
+<br />
+<asp:TextBox ID="TextBox3" runat="server"
+SkinID="s1"></asp:TextBox>
+<br />
+<br />
+<asp:Button ID="Button1" runat="server" Text="Button" />
+</form>
+
+Skinfile code:
+<asp:Label runat="server" ForeColor="orange"></asp:Label>
+<asp:TextBox runat="server" BackColor="orange" ForeColor="black"
+BorderColor="Red" BorderStyle="Solid"></asp:TextBox>
+<asp:RadioButton runat="server" BackColor="orange"
+ForeColor="black" BorderColor="Red"
+BorderStyle="Solid"></asp:RadioButton>
+<asp:Button runat="server" BackColor="orange" ForeColor="black"
+BorderColor="Red" BorderStyle="Solid"></asp:Button>
+<asp:TextBox runat="server" skinID="s1" BackColor="Red"
+ForeColor="black" BorderColor="Red"
+BorderStyle="Solid"></asp:TextBox>
